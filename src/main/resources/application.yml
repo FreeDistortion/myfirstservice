@@ -1,0 +1,19 @@
+server:
+  port: 9101
+
+spring:
+  application:
+    name: myfirstservice
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    # 2초 동안 heartbeat가 수신되지 않으면 service 등록 해제
+    lease-expiration-duration-in-seconds: 2
+    # eureka server로 1초 마다 heartbeat 전송
+    lease-renewal-interval-in-seconds: 1
+
